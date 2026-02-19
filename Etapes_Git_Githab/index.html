@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Etapes Git Githab - Mon Projet IDGEO</title>
+    <title>Exercice complet : Installation d'Ubuntu à déploiement MkDocs - Mon Projet IDGEO</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Etapes Git Githab";
+        var mkdocs_page_name = "Exercice complet : Installation d\u0027Ubuntu \u00e0 d\u00e9ploiement MkDocs";
         var mkdocs_page_input_path = "Etapes_Git_Githab.md";
         var mkdocs_page_url = null;
       </script>
@@ -44,7 +44,7 @@
                 </li>
               </ul>
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">Etapes Git Githab</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Exercice complet : Installation d'Ubuntu à déploiement MkDocs</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#a-installation-de-lenvironnement-linux-wsl-ubuntu">A. Installation de l’environnement Linux (WSL / Ubuntu)</a>
     </li>
@@ -52,13 +52,9 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#c-preparation-du-projet">C. Préparation du projet</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#d-creation-dun-environnement-virtuel-et-installation-de-mkdocs">D. Création d’un environnement virtuel et installation de MkDocs</a>
+    <li class="toctree-l2"><a class="reference internal" href="#d-creation-dun-environnement-virtuel-python-et-installation-de-mkdocs">D. Création d’un environnement virtuel Python et installation de MkDocs</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#e-configuration-de-mkdocs">E. Configuration de MkDocs</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#f-visualisation-et-construction-du-site">F. Visualisation et construction du site</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#g-deploiement-sur-github-pages">G. Déploiement sur GitHub Pages</a>
     </li>
     </ul>
                 </li>
@@ -77,7 +73,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Etapes Git Githab</li>
+      <li class="breadcrumb-item active">Exercice complet : Installation d'Ubuntu à déploiement MkDocs</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -86,71 +82,117 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <p>1️⃣ Fichier docs/etapes.md</p>
-<h1 id="etapes-completes-de-lexercice">Étapes complètes de l’exercice</h1>
-<p>Cette page décrit la séquence complète depuis l’installation d’Ubuntu jusqu’au déploiement de la page Markdown avec MkDocs.</p>
+                <h1 id="exercice-complet-installation-dubuntu-a-deploiement-mkdocs">Exercice complet : Installation d'Ubuntu à déploiement MkDocs</h1>
+<p>Cette page décrit la séquence complète depuis l’installation d’Ubuntu/WSL jusqu’au déploiement d’une page Markdown avec MkDocs et GitHub Pages.</p>
 <hr />
 <h2 id="a-installation-de-lenvironnement-linux-wsl-ubuntu">A. Installation de l’environnement Linux (WSL / Ubuntu)</h2>
 <ol>
-<li>Activer WSL sur Windows :
-powershell
-wsl --install</li>
+<li><strong>Activer WSL sur Windows :</strong></li>
 </ol>
-<p>Installer Ubuntu depuis le Microsoft Store.</p>
+<p>powershell
+wsl --install
+Installer Ubuntu depuis le Microsoft Store.</p>
+<p>Créer un utilisateur Ubuntu lors du premier lancement.</p>
 <p>Mettre à jour Ubuntu :</p>
 <pre><code>sudo apt update
 sudo apt upgrade -y
+
 </code></pre>
 <h2 id="b-installation-de-git">B. Installation de Git</h2>
 <p>Installer Git :</p>
 <pre><code>sudo apt install git
+</code></pre>
+<p>Vérifier l’installation :</p>
+<pre><code>git --version
 </code></pre>
 <p>Configurer Git :</p>
 <pre><code>git config --global user.name &quot;TonNom&quot;
 git config --global user.email &quot;tonemail@gmail.com&quot;
 </code></pre>
 <h2 id="c-preparation-du-projet">C. Préparation du projet</h2>
-<p>Créer le dossier :</p>
+<p>Créer le dossier du projet et se déplacer dedans :</p>
 <pre><code>mkdir ~/idgeo
 cd ~/idgeo
 </code></pre>
-<p>Initialiser Git :</p>
+<p>Initialiser Git et renommer la branche principale :</p>
 <pre><code>git init
 git branch -m main
 </code></pre>
-<p>Créer le dossier docs et le sous-dossier img :</p>
+<p>Créer le dossier docs et le sous-dossier pour les images :</p>
 <pre><code>mkdir -p docs/img
 </code></pre>
-<h2 id="d-creation-dun-environnement-virtuel-et-installation-de-mkdocs">D. Création d’un environnement virtuel et installation de MkDocs</h2>
+<h2 id="d-creation-dun-environnement-virtuel-python-et-installation-de-mkdocs">D. Création d’un environnement virtuel Python et installation de MkDocs</h2>
+<p>Installer le package venv (si nécessaire) :</p>
+<pre><code>sudo apt install python3-venv
+</code></pre>
+<p>Créer l’environnement virtuel :</p>
 <pre><code>python3 -m venv venv
-source venv/bin/activate
-pip install --upgrade pip
+</code></pre>
+<p>Activer l’environnement virtuel :</p>
+<pre><code>source venv/bin/activate
+</code></pre>
+<p>Installer MkDocs :</p>
+<pre><code>pip install --upgrade pip
 pip install mkdocs
 mkdocs --version
 </code></pre>
+<p>⚠️ Toujours activer l’environnement virtuel avant d’utiliser MkDocs.</p>
 <h2 id="e-configuration-de-mkdocs">E. Configuration de MkDocs</h2>
-<p>Créer mkdocs.yml :</p>
+<p>Créer le fichier mkdocs.yml à la racine du projet :</p>
 <pre><code>site_name: Mon Projet IDGEO
 docs_dir: docs
 theme: readthedocs
-</code></pre>
-<h2 id="f-visualisation-et-construction-du-site">F. Visualisation et construction du site</h2>
-<p>Lancer le serveur local :</p>
-<pre><code>mkdocs serve
+nav:
+  - Accueil: index.md
+  - Étapes: etapes.md
+  ```
+## F. Création des fichiers Markdown
+Fichier docs/index.md :
 
+# Bienvenue sur Mon Projet IDGEO
+
+Ceci est un exemple de site Markdown avec MkDocs.
+
+
+## Instructions
+
+- Modifier ce fichier pour ajouter votre contenu.
+- Les changements se rechargent automatiquement avec `mkdocs serve`.
+- Le site peut être déployé sur GitHub Pages avec `mkdocs gh-deploy`.
+Fichier docs/etapes.md (cette page) :
+
+Déjà en cours de lecture ici ; ce fichier contient toutes les étapes de A à G.
+
+Ajouter l’image dans docs/img/ign.png.
+
+### G. Visualisation locale et construction du site
+Lancer le serveur de développement :
+
+mkdocs serve
+Ouvrir dans le navigateur :
+
+http://127.0.0.1:8000/
+Le site se recharge automatiquement à chaque modification des fichiers Markdown.
+
+Construire le site statique pour déploiement :
+
+mkdocs build
+Les fichiers HTML sont générés dans le dossier site/.
+
+H. Déploiement sur GitHub Pages
+Créer un dépôt sur GitHub (ex. : cpgeom).
+
+Ajouter le dépôt distant et pousser le projet :
 </code></pre>
-<p>Construire le site :</p>
-<pre><code>mkdocs build
+<p>git remote add origin https://chafiiabdi.github.io/cpgeom</p>
+<pre><code></code></pre>
+<p>git add .
+git commit -m "Ajout site"
+git push -u origin main</p>
+<pre><code>Déployer le site avec MkDocs :
 </code></pre>
-<h2 id="g-deploiement-sur-github-pages">G. Déploiement sur GitHub Pages</h2>
-<pre><code>git remote add origin git@github.com:username/idgeo.git
-git add .
-git commit -m &quot;Ajout site&quot;
-git push -u origin main
-mkdocs gh-deploy
-</code></pre>
-<p>Le site sera disponible sur :</p>
-<p>https://chafiiabdi.github.io/cpgeom/</p>
+<p>mkdocs gh-deploy
+```</p>
               
             </div>
           </div><footer>
