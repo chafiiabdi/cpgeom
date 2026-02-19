@@ -48,6 +48,16 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#a-installation-de-lenvironnement-linux-wsl-ubuntu">A. Installation de l’environnement Linux (WSL / Ubuntu)</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#b-installation-de-git">B. Installation de Git</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#c-preparation-du-projet">C. Préparation du projet</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#d-creation-dun-environnement-virtuel-et-installation-de-mkdocs">D. Création d’un environnement virtuel et installation de MkDocs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#e-configuration-de-mkdocs">E. Configuration de MkDocs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#g-deploiement-sur-github-pages">G. Déploiement sur GitHub Pages</a>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -89,7 +99,7 @@ wsl --install</li>
 <pre><code>sudo apt update
 sudo apt upgrade -y
 </code></pre>
-<p>B. Installation de Git</p>
+<h2 id="b-installation-de-git">B. Installation de Git</h2>
 <p>Installer Git :</p>
 <pre><code>sudo apt install git
 </code></pre>
@@ -97,7 +107,7 @@ sudo apt upgrade -y
 <pre><code>git config --global user.name &quot;TonNom&quot;
 git config --global user.email &quot;tonemail@gmail.com&quot;
 </code></pre>
-<p>C. Préparation du projet</p>
+<h2 id="c-preparation-du-projet">C. Préparation du projet</h2>
 <p>Créer le dossier :</p>
 <pre><code>mkdir ~/idgeo
 cd ~/idgeo
@@ -109,14 +119,14 @@ git branch -m main
 <p>Créer le dossier docs et le sous-dossier img :</p>
 <pre><code>mkdir -p docs/img
 </code></pre>
-<p>D. Création d’un environnement virtuel et installation de MkDocs</p>
+<h2 id="d-creation-dun-environnement-virtuel-et-installation-de-mkdocs">D. Création d’un environnement virtuel et installation de MkDocs</h2>
 <pre><code>python3 -m venv venv
 source venv/bin/activate
 pip install --upgrade pip
 pip install mkdocs
 mkdocs --version
 </code></pre>
-<p>E. Configuration de MkDocs</p>
+<h2 id="e-configuration-de-mkdocs">E. Configuration de MkDocs</h2>
 <p>Créer mkdocs.yml :</p>
 <pre><code>site_name: Mon Projet IDGEO
 docs_dir: docs
@@ -130,7 +140,7 @@ theme: readthedocs
 <p>Construire le site :</p>
 <pre><code>mkdocs build
 </code></pre>
-<p>G. Déploiement sur GitHub Pages</p>
+<h2 id="g-deploiement-sur-github-pages">G. Déploiement sur GitHub Pages</h2>
 <pre><code>git remote add origin git@github.com:username/idgeo.git
 git add .
 git commit -m &quot;Ajout site&quot;
@@ -138,34 +148,7 @@ git push -u origin main
 mkdocs gh-deploy
 </code></pre>
 <p>Le site sera disponible sur :</p>
-<p>https://username.github.io/idgeo/</p>
-<pre><code>---
-
-## **3️⃣ Fichier `mkdocs.yml`**
-
-Place ce fichier à la racine de `idgeo/` :
-
-```yaml
-site_name: Mon Projet IDGEO
-docs_dir: docs
-theme: readthedocs
-nav:
-  - Accueil: index.md
-  - Étapes: etapes.md
-</code></pre>
-<pre><code>4️⃣ Instructions finales
-</code></pre>
-<p>Mettre l’image dans docs/img/ign.png.</p>
-<p>Activer ton environnement virtuel avant de lancer MkDocs :</p>
-<pre><code>source venv/bin/activate
-</code></pre>
-<p>Lancer le serveur local :</p>
-<pre><code>mkdocs serve
-</code></pre>
-<p>Ouvrir dans le navigateur :</p>
-<p>http://127.0.0.1:8000/</p>
-<p>Déployer sur GitHub Pages :</p>
-<p>mkdocs gh-deploy</p>
+<p>https://chafiiabdi.github.io/cpgeom/</p>
               
             </div>
           </div><footer>
